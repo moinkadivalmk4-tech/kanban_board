@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanban Board</title>
+    <title>Kanban Task Board</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,22 +11,49 @@
     <h1>Kanban Task Board</h1>
 
     <form id="taskForm">
-        <input type="text" id="taskInput" placeholder="Enter task">
+        <input
+            type="text"
+            id="taskInput"
+            placeholder="Enter a task"
+        >
         <button type="submit">Add Task</button>
     </form>
 
     <div class="board">
-        <div id="todo">
+
+        <div class="column">
             <h2>To Do</h2>
+
+            <div
+                class="task-list"
+                id="todo"
+                ondragover="allowDrop(event)"
+                ondrop="drop(event)">
+            </div>
         </div>
 
-        <div id="progress">
+        <div class="column">
             <h2>In Progress</h2>
+
+            <div
+                class="task-list"
+                id="progress"
+                ondragover="allowDrop(event)"
+                ondrop="drop(event)">
+            </div>
         </div>
 
-        <div id="done">
+        <div class="column">
             <h2>Done</h2>
+
+            <div
+                class="task-list"
+                id="done"
+                ondragover="allowDrop(event)"
+                ondrop="drop(event)">
+            </div>
         </div>
+
     </div>
 
     <script src="script.js"></script>
