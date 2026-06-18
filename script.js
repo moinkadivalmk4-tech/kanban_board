@@ -4,9 +4,10 @@ const input = document.getElementById("taskInput");
 let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 
 form.addEventListener("submit", (e) => {
+
     e.preventDefault();
 
-    if (input.value.trim() === "") {
+    if(input.value.trim() === ""){
         alert("Please enter a task");
         return;
     }
@@ -23,14 +24,16 @@ form.addEventListener("submit", (e) => {
     input.value = "";
 });
 
-function saveTasks() {
+function saveTasks(){
+
     localStorage.setItem(
         "tasks",
         JSON.stringify(tasks)
     );
+
 }
 
-function renderTasks() {
+function renderTasks(){
 
     document.getElementById("todo").innerHTML = "";
     document.getElementById("progress").innerHTML = "";
@@ -59,13 +62,12 @@ function renderTasks() {
                 task.text
             );
 
-            if (updated && updated.trim() !== "") {
+            if(updated && updated.trim() !== ""){
 
                 task.text = updated;
 
                 saveTasks();
                 renderTasks();
-
             }
 
         });
@@ -89,7 +91,7 @@ function renderTasks() {
 
 }
 
-function drag(event) {
+function drag(event){
 
     event.dataTransfer.setData(
         "text",
@@ -98,13 +100,13 @@ function drag(event) {
 
 }
 
-function allowDrop(event) {
+function allowDrop(event){
 
     event.preventDefault();
 
 }
 
-function drop(event) {
+function drop(event){
 
     event.preventDefault();
 
@@ -113,22 +115,22 @@ function drop(event) {
 
     let targetColumn = event.target;
 
-    while (
+    while(
         targetColumn &&
         !targetColumn.classList.contains("task-list")
-    ) {
-        targetColumn =
-            targetColumn.parentElement;
+    ){
+        targetColumn = targetColumn.parentElement;
     }
 
-    if (!targetColumn) return;
+    if(!targetColumn){
+        return;
+    }
 
     tasks.forEach(task => {
 
-        if (task.id === taskId) {
+        if(task.id === taskId){
 
-            task.status =
-                targetColumn.id;
+            task.status = targetColumn.id;
 
         }
 

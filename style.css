@@ -1,3 +1,72 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#f4f4f4;
+    padding:20px;
+}
+
+h1{
+    text-align:center;
+    margin-bottom:20px;
+    color:#333;
+}
+
+#taskForm{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+#taskInput{
+    width:300px;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:6px;
+}
+
+button{
+    padding:10px 15px;
+    border:none;
+    border-radius:6px;
+    cursor:pointer;
+    background:#222;
+    color:white;
+}
+
+button:hover{
+    opacity:0.9;
+}
+
+.board{
+    display:flex;
+    gap:20px;
+}
+
+.column{
+    flex:1;
+    background:white;
+    border-radius:10px;
+    padding:15px;
+    min-height:500px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.column h2{
+    text-align:center;
+    margin-bottom:15px;
+    color:#444;
+}
+
+.task-list{
+    min-height:400px;
+}
+
 .task{
     background:#e8e8e8;
     padding:12px;
@@ -9,34 +78,13 @@
 
 .task p{
     margin-bottom:10px;
-    word-wrap:break-word;
+    word-break:break-word;
 }
 
 .edit-btn,
 .delete-btn{
-    border:none;
     padding:6px 10px;
-    border-radius:4px;
-}
-
-.edit-btn{
     margin-right:5px;
-}
-
-#taskInput{
-    border:1px solid #ccc;
-    border-radius:5px;
-}
-
-button{
-    border:none;
-    background:#222;
-    color:white;
-    border-radius:5px;
-}
-
-button:hover{
-    opacity:0.9;
 }
 
 @media(max-width:768px){
@@ -53,10 +101,6 @@ button:hover{
     #taskInput{
         width:100%;
         max-width:350px;
-    }
-
-    .column{
-        width:100%;
     }
 
 }
