@@ -4,10 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <h1>Kanban Task Board</h1>
+
+    <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Enter task">
+        <button type="submit">Add Task</button>
+    </form>
+
+    <div class="board">
+        <div id="todo">
+            <h2>To Do</h2>
+        </div>
+
+        <div id="progress">
+            <h2>In Progress</h2>
+        </div>
+
+        <div id="done">
+            <h2>Done</h2>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
