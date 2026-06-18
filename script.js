@@ -9,16 +9,24 @@ form.addEventListener("submit", (e) => {
     if (input.value.trim() === "") return;
 
     tasks.push({
-        id: Date.now(),
-        text: input.value
-    });
-
+    id: Date.now(),
+    text: input.value,
+    status: "todo"
+});
     renderTasks();
 
     input.value = "";
 });
 
 function renderTasks() {
+    document.getElementById("todo").innerHTML = "";
+document.getElementById("progress").innerHTML = "";
+document.getElementById("done").innerHTML = "";
+
+card.draggable = true;
+card.id = task.id;
+
+card.addEventListener("dragstart", drag);
 
     const todo = document.getElementById("todo");
 
