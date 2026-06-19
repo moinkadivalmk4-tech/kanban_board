@@ -34,6 +34,8 @@ function saveTasks(){
 }
 
 function renderTasks(){
+    document.getElementById("totalTasks").textContent =
+tasks.length;
 
     document.getElementById("todo").innerHTML = "";
     document.getElementById("progress").innerHTML = "";

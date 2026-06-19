@@ -6,8 +6,11 @@
 }
 
 body{
-    background:#f4f4f4;
+    body{
+    background:#121826;
     padding:20px;
+    color:white;
+}
 }
 
 h1{
@@ -50,11 +53,21 @@ button:hover{
 
 .column{
     flex:1;
-    background:white;
-    border-radius:10px;
+    background:#1d2636;
+    border-radius:14px;
     padding:15px;
     min-height:500px;
-    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+.column:nth-child(1){
+    border-top:5px solid #ff6b6b;
+}
+
+.column:nth-child(2){
+    border-top:5px solid #feca57;
+}
+
+.column:nth-child(3){
+    border-top:5px solid #1dd1a1;
 }
 
 .column h2{
@@ -68,12 +81,12 @@ button:hover{
 }
 
 .task{
-    background:#e8e8e8;
+    background:#2d3748;
+    color:white;
     padding:12px;
-    border-radius:8px;
+    border-radius:10px;
     margin-bottom:10px;
     cursor:grab;
-    box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
 .task p{
@@ -103,4 +116,9 @@ button:hover{
         max-width:350px;
     }
 
+}
+.subtitle{
+    text-align:center;
+    margin-bottom:20px;
+    color:#cbd5e1;
 }
