@@ -1,8 +1,6 @@
 const form = document.getElementById("taskForm");
 const input = document.getElementById("taskInput");
 
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-
 form.addEventListener("submit", (e) => {
 
     e.preventDefault();
@@ -24,18 +22,7 @@ form.addEventListener("submit", (e) => {
     input.value = "";
 });
 
-function saveTasks(){
-
-    localStorage.setItem(
-        "tasks",
-        JSON.stringify(tasks)
-    );
-
-}
-
 function renderTasks(){
-    document.getElementById("totalTasks").textContent =
-tasks.length;
 
     document.getElementById("todo").innerHTML = "";
     document.getElementById("progress").innerHTML = "";
@@ -70,6 +57,7 @@ tasks.length;
 
                 saveTasks();
                 renderTasks();
+
             }
 
         });
@@ -90,56 +78,6 @@ tasks.length;
             .appendChild(card);
 
     });
-
-}
-
-function drag(event){
-
-    event.dataTransfer.setData(
-        "text",
-        event.target.id
-    );
-
-}
-
-function allowDrop(event){
-
-    event.preventDefault();
-
-}
-
-function drop(event){
-
-    event.preventDefault();
-
-    const taskId =
-        event.dataTransfer.getData("text");
-
-    let targetColumn = event.target;
-
-    while(
-        targetColumn &&
-        !targetColumn.classList.contains("task-list")
-    ){
-        targetColumn = targetColumn.parentElement;
-    }
-
-    if(!targetColumn){
-        return;
-    }
-
-    tasks.forEach(task => {
-
-        if(task.id === taskId){
-
-            task.status = targetColumn.id;
-
-        }
-
-    });
-
-    saveTasks();
-    renderTasks();
 
 }
 
